@@ -1,10 +1,23 @@
-import '../styles/App.css';
+import "../styles/App.css";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Components Imports
+import Main from "./Main";
+import Quiz from "./Quiz";
+import Result from "./Result";
+
+// react routes
+const router = createBrowserRouter([
+  { path: "/", element: <Main/> },
+  { path: "/quiz", element: <Quiz/> },
+  { path: "/result", element: <Result/> },
+]);
 function App() {
   return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
+    <>
+    <RouterProvider router={router }/>
+    </>
   );
 }
 
